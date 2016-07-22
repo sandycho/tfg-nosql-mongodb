@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :publication_orms
+
   resources :writers
 
   root 'application#index'
@@ -8,6 +10,12 @@ Rails.application.routes.draw do
   resources :publications do
     resources :comments
   end
+
+  post 'application/setCommentToPublication'
+  post 'application/addCommentToPublication'
+  post 'application/showPublicationAndComments'
+  post 'application/createEveryThing'
+  post 'application/create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

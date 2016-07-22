@@ -1,8 +1,11 @@
 class User
 	include MongoMapper::Document
+	many :publications
 
-	key :name, String, :required = true
+	key :name, String
 	key :priority, Integer
+	key :age, Integer
+	key :driver, Boolean
 
-	many :tasks
+  attr_accessible :name, :priority, :age, :driver
 end
